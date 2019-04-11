@@ -17,8 +17,20 @@ public class CourseController {
     @Autowired
     CourseRepository courseRepo;
 
+
+
     @GetMapping(value = "/rating/{rating}")
     public List<Course> getCoursesByRating(@PathVariable int rating) {
         return courseRepo.findCourseByRating(rating);
     }
+
+    @GetMapping(value = "/customer/{id}")
+    public List<Course> getAllCoursesByCustomer(@PathVariable Long id){
+        return courseRepo.findAllCustomersByCourse(id);
+    }
+
+
+
 }
+
+
