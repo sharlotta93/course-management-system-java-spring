@@ -21,4 +21,9 @@ public class CustomerController {
     public List<Customer> getAllCustomerForACourse(@PathVariable Long id) {
         return customerRepo.getAllCustomersByCourse(id);
     }
+
+    @GetMapping(value = "age/{age}/town/{town}/course/{id}")
+    public List<Customer> getAllCustomerForACourseByAgeAndTown(@PathVariable  String town,@PathVariable int age, @PathVariable Long id ) {
+        return customerRepo.getAllCustomersofAgeByTownAndCourse(town, age, id);
+    }
 }
