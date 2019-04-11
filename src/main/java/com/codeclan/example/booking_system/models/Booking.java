@@ -13,10 +13,20 @@ public class Booking {
     @Column
     private String date;
 
+    @ManyToOne
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private Customer customer;
+
     public Booking() {}
 
-    public Booking(String date) {
+    public Booking(String date, Course course, Customer customer) {
         this.date = date;
+        this.course = course;
+        this.customer = customer;
     }
 
     public Long getId() {
@@ -33,5 +43,21 @@ public class Booking {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course newCourse) {
+        course = newCourse;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
