@@ -1,6 +1,7 @@
 package com.codeclan.example.booking_system.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -79,4 +80,5 @@ public class Course {
     public void addBooking(Booking newBooking) {
         bookings.add(newBooking);
     }
+
 }
